@@ -33,6 +33,7 @@ boundaries <- map('worldHires', xlim=ext[1:2], ylim= ext[3:4], plot=FALSE)
 boundaries <- map2SpatialLines(boundaries, proj4string=CRS(projection(TAS)))
 levelplot(TAS, layers=10) + layer(sp.lines(boundaries))
 ## png(filename="...") para lanzar el device
+## print() es necesario siempre en lattice y ggplot?
 ## dev.off() para cerrarlo. Me genera el png pero me esta dando problemas para abrirlo.
 
 
