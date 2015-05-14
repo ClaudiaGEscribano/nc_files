@@ -44,7 +44,7 @@ levelplot(variabilidadAnual, contour=TRUE)
 histogram(variabilidadAnual)
 boxplot(variabilidadAunal)
 
-## Variabilidad mensual
+## Variabilidad mensual. Con las cdo calculo las medias mensuales de irracdiancia global en epl plano horizontal y calculo la desviacion tipica de la irradiancia mensual.
 
 ## cdo ymonmean rsds89_08.nc rsdsmm89_08.nc ##media de eneros, feb
 ## cdo muldpm rsdsmm89_08.nc SISmm89_08.nc
@@ -89,7 +89,7 @@ days <- function(x) as.numeric(format(x, '%d'))
 days(as.Date('1989-01-01'))
 SISd <- zApply(SISd, by=days, fun='mean') # tarda demasiado
 
-## cdo ydaymean SISdkw.nc SISday.nc
+## cdo ydaymean SISdkw.nc SISday.nc Calcula la media de radiacion global diaria para cada dia del año.
 
 SISd <- stack('SISday.nc', varname='rsds')
 idx <- seq(1:366)
